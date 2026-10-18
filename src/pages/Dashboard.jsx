@@ -352,11 +352,9 @@ export default function Dashboard() {
   return (
     <div className="dashboard">
       <nav className="app-topbar" aria-label="Primary navigation">
-        <Link
-          className="app-brand"
-          to="/dashboard"
-        >
+        <Link className="app-brand" to="/dashboard">
           <span className="app-brand-mark">F</span>
+
           <span className="app-brand-copy">
             <strong>Finora</strong>
             <small>Personal finance, made smarter</small>
@@ -365,59 +363,40 @@ export default function Dashboard() {
 
         <div className="app-nav-scroll">
           <div className="app-nav-links">
-            <Link
-              className="app-nav-link active"
-              to="/dashboard"
-            >
+            {/* New: Home page link */}
+            <Link className="app-nav-link" to="/">
+              Home
+            </Link>
+
+            <Link className="app-nav-link active" to="/dashboard">
               Dashboard
             </Link>
 
-            <Link
-              className="app-nav-link"
-              to="/transactions"
-            >
+            <Link className="app-nav-link" to="/transactions">
               Transactions
             </Link>
 
-            <Link
-              className="app-nav-link"
-              to="/goals"
-            >
+            <Link className="app-nav-link" to="/goals">
               Goals
             </Link>
 
-            <Link
-              className="app-nav-link"
-              to="/tasks"
-            >
+            <Link className="app-nav-link" to="/tasks">
               Tasks
             </Link>
 
-            <Link
-              className="app-nav-link"
-              to="/chat"
-            >
+            <Link className="app-nav-link" to="/chat">
               AI Assistant
             </Link>
 
-            <Link
-              className="app-nav-link"
-              to="/import"
-            >
+            <Link className="app-nav-link" to="/import">
               Import
             </Link>
 
-            <Link
-              className="app-nav-link"
-              to="/reminders"
-            >
+            <Link className="app-nav-link" to="/reminders">
               Reminders
             </Link>
 
-            <Link
-              className="app-nav-link"
-              to="/devices"
-            >
+            <Link className="app-nav-link" to="/devices">
               Devices
             </Link>
           </div>
