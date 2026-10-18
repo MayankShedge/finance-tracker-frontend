@@ -2160,3 +2160,360 @@ button:disabled {
     padding-inline: 0.62rem;
   }
 }
+
+.finora-page {
+  --finora-deep: #153e34;
+  --finora-green: #1d6f5c;
+  --finora-mint: #dcefe6;
+  --finora-cream: #f8f8f3;
+  --finora-line: rgba(28, 43, 38, 0.11);
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--bg, #f6f7f4);
+  color: var(--ink, #1c2b26);
+  font-family: inherit;
+}
+
+.finora-page * { box-sizing: border-box; }
+.finora-page a { text-decoration: none; }
+.finora-container { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
+
+.finora-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid rgba(28, 43, 38, 0.07);
+  background: rgba(250, 251, 247, 0.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+.finora-nav-inner {
+  width: min(1280px, calc(100% - 56px));
+  min-height: 82px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+.finora-brand { display: inline-flex; align-items: center; gap: 11px; flex-shrink: 0; color: var(--ink); }
+.finora-brand-mark {
+  width: 42px; height: 42px; display: grid; place-items: center;
+  border-radius: 14px; background: var(--accent, #1d6f5c); color: white;
+  font-size: 26px; line-height: 1; font-weight: 800; font-family: Georgia, serif;
+  box-shadow: 0 6px 14px rgba(29, 111, 92, 0.18);
+}
+.finora-brand-word { display: block; font-size: 23px; letter-spacing: -1.2px; line-height: 1; font-weight: 800; }
+.finora-brand-word > span { display: inline; color: var(--accent, #1d6f5c); }
+.finora-brand-word small { display: block; margin-top: 6px; color: var(--muted, #5b6b64); font-size: 8px; font-weight: 800; letter-spacing: 1.45px; }
+.finora-main-nav { display: flex; align-items: center; justify-content: center; gap: 32px; }
+.finora-main-nav a, .finora-login-link { color: var(--muted, #5b6b64); font-size: 13px; font-weight: 650; transition: color 160ms ease; }
+.finora-main-nav a:hover, .finora-login-link:hover { color: var(--accent, #1d6f5c); }
+.finora-nav-actions { display: flex; align-items: center; gap: 22px; }
+.finora-button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 13px;
+  border: 1px solid transparent; border-radius: 11px; cursor: pointer;
+  font-size: 13px; line-height: 1.2; font-weight: 750;
+  transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+.finora-button:hover { transform: translateY(-2px); }
+.finora-button-primary { color: #fff; background: var(--accent, #1d6f5c); box-shadow: 0 8px 18px rgba(29, 111, 92, 0.17); }
+.finora-button-primary:hover { background: #155846; box-shadow: 0 11px 24px rgba(29, 111, 92, 0.22); }
+.finora-nav-cta { min-height: 43px; padding: 0 17px; }
+.finora-button-large { min-height: 54px; padding: 0 22px; border-radius: 12px; font-size: 14px; }
+.finora-button-secondary { background: rgba(255,255,255,0.72); border-color: var(--finora-line); color: var(--ink, #1c2b26); }
+.finora-button-secondary:hover { border-color: rgba(29, 111, 92, 0.38); background: #fff; }
+
+.finora-hero {
+  position: relative; isolation: isolate; overflow: hidden;
+  background: linear-gradient(118deg, #f9faf5 0%, #f4f8f2 52%, #e4f1e7 100%);
+}
+.finora-hero-grid { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 0.94fr) minmax(0, 1.06fr); align-items: center; gap: 30px; padding-block: 76px 86px; }
+.finora-hero-copy { position: relative; z-index: 2; padding-block: 12px; }
+.finora-pill { display: inline-flex; align-items: center; gap: 9px; padding: 9px 13px; border: 1px solid rgba(29, 111, 92, 0.16); border-radius: 999px; background: rgba(255,255,255,0.7); color: var(--finora-deep); font-size: 11px; font-weight: 750; letter-spacing: 0.2px; }
+.finora-pill-spark { display: grid; place-items: center; width: 19px; height: 19px; border-radius: 50%; color: var(--accent); background: var(--accent-soft); }
+.finora-hero h1 { margin: 25px 0 21px; color: #1a2924; font-size: clamp(47px, 5.35vw, 72px); font-weight: 780; letter-spacing: -4.2px; line-height: 0.99; }
+.finora-hero h1 em, .finora-section-heading h2 em, .finora-ai-copy h2 em, .finora-final-cta h2 em { color: var(--accent, #1d6f5c); font-family: Georgia, "Times New Roman", serif; font-weight: 500; }
+.finora-hero-description { max-width: 495px; margin: 0; color: var(--muted, #5b6b64); font-size: 16px; line-height: 1.85; }
+.finora-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 29px; }
+.finora-hero-footnote { display: flex; align-items: center; gap: 9px; margin-top: 22px; color: #607069; font-size: 11px; line-height: 1.6; }
+.finora-footnote-check { width: 18px; height: 18px; display: grid; place-items: center; border-radius: 50%; background: #dcefe6; color: #155846; font-size: 11px; font-weight: 900; flex-shrink: 0; }
+.finora-hero-orb { position: absolute; z-index: 0; border-radius: 50%; pointer-events: none; filter: blur(1px); }
+.finora-orb-one { width: 490px; height: 490px; right: -170px; top: -250px; border: 1px solid rgba(29,111,92,0.09); box-shadow: 0 0 0 42px rgba(29,111,92,0.025), 0 0 0 84px rgba(29,111,92,0.02); }
+.finora-orb-two { width: 230px; height: 230px; left: -150px; bottom: -130px; background: rgba(216, 235, 221, 0.4); }
+.finora-hero-bottom-line { position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(29,111,92,0.22), transparent); }
+
+/* Browser-like dashboard illustration */
+.finora-hero-visual { min-width: 0; position: relative; padding: 10px 0 14px 10px; }
+.finora-preview-wrap { position: relative; max-width: 610px; margin-left: auto; }
+.finora-preview-glow { position: absolute; inset: 8% -3% 4% 4%; border-radius: 35px; background: rgba(29, 111, 92, 0.18); filter: blur(32px); }
+.finora-preview-window { position: relative; z-index: 1; overflow: hidden; border: 1px solid rgba(28,43,38,0.13); border-radius: 19px; background: #fff; box-shadow: 0 28px 85px rgba(25, 57, 45, 0.18), 0 4px 14px rgba(25, 57, 45, 0.05); transform: rotate(1deg); transform-origin: center; }
+.finora-preview-topline { min-height: 44px; padding: 0 15px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid #eef0ec; background: #fcfdfa; }
+.finora-window-dots { display: flex; align-items: center; gap: 5px; }
+.finora-window-dots i { width: 6px; height: 6px; border-radius: 50%; background: #dce2dc; }
+.finora-window-dots i:first-child { background: #9fc8b4; }
+.finora-preview-label { color: #809088; font-size: 8px; letter-spacing: 1.4px; font-weight: 850; }
+.finora-preview-avatar { display: grid; place-items: center; width: 25px; height: 25px; border-radius: 8px; background: #e4f1e9; color: #236a55; font-size: 10px; font-weight: 800; }
+.finora-preview-content { padding: 22px; }
+.finora-preview-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 17px; }
+.finora-preview-kicker { margin: 0 0 6px; color: #85928b; font-size: 7px; letter-spacing: 1.3px; font-weight: 850; }
+.finora-preview-heading h2 { margin: 0; color: #1a3027; font-size: clamp(15px, 1.6vw, 20px); letter-spacing: -0.55px; }
+.finora-preview-period { white-space: nowrap; padding: 7px 9px; border: 1px solid #e8ede8; border-radius: 7px; color: #52645a; font-size: 8px; font-weight: 650; }
+.finora-preview-balance { display: flex; justify-content: space-between; align-items: center; padding: 17px 19px; border-radius: 12px; background: linear-gradient(115deg, #1a5947, #267b62); color: #fff; }
+.finora-preview-muted { display: block; color: #7f8c85; font-size: 9px; font-weight: 550; }
+.finora-preview-balance .finora-preview-muted { color: rgba(255,255,255,0.72); }
+.finora-preview-eye { margin-left: 5px; font-size: 10px; }
+.finora-preview-balance strong { display: block; margin-top: 7px; font-size: clamp(21px, 2.5vw, 30px); letter-spacing: -1px; line-height: 1.1; }
+.finora-preview-change { display: inline-flex; align-items: center; gap: 5px; margin-top: 9px; color: #d9f0e2; font-size: 8px; }
+.finora-preview-change span { display: grid; place-items: center; width: 14px; height: 14px; border-radius: 50%; background: rgba(255,255,255,0.16); }
+.finora-balance-mark { width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,0.24); border-radius: 12px; color: rgba(255,255,255,0.9); font-family: Georgia, serif; font-size: 25px; }
+.finora-preview-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+.finora-mini-metric { position: relative; padding: 13px 14px; border: 1px solid #edf0ec; border-radius: 11px; background: #fff; }
+.finora-metric-icon { position: absolute; top: 13px; right: 13px; width: 21px; height: 21px; display: grid; place-items: center; border-radius: 7px; font-size: 12px; font-weight: 800; }
+.finora-income-icon { background: #e7f3eb; color: #25845f; }
+.finora-expense-icon { background: #fae9e5; color: #b65d4d; }
+.finora-mini-metric strong { display: block; margin-top: 8px; color: #22332b; font-size: 18px; letter-spacing: -0.5px; }
+.finora-mini-metric small { display: block; margin-top: 5px; color: #939e97; font-size: 8px; }
+.finora-preview-lower { display: grid; grid-template-columns: 1.38fr 0.9fr; gap: 12px; margin-top: 12px; }
+.finora-chart-card, .finora-goal-card { min-width: 0; padding: 13px; border: 1px solid #edf0ec; border-radius: 11px; background: #fff; }
+.finora-preview-card-heading { display: flex; justify-content: space-between; gap: 7px; align-items: flex-start; }
+.finora-preview-card-heading strong { display: block; color: #26382f; font-size: 10px; }
+.finora-preview-card-heading span { display: block; margin-top: 4px; color: #929c95; font-size: 7px; }
+.finora-preview-card-heading .finora-chart-menu { margin-top: 0; letter-spacing: 1px; }
+.finora-chart { position: relative; display: flex; justify-content: space-around; gap: 7px; height: 100px; margin-top: 12px; padding: 0 2px 0; }
+.finora-chart-guides { position: absolute; inset: 0 0 17px; display: flex; flex-direction: column; justify-content: space-between; pointer-events: none; }
+.finora-chart-guides i { border-top: 1px dashed #e8ede8; }
+.finora-chart-month { position: relative; z-index: 1; flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 7px; color: #8e9992; font-size: 7px; }
+.finora-chart-bars { height: 83px; width: 100%; display: flex; justify-content: center; align-items: flex-end; gap: 3px; }
+.finora-chart-bar { display: block; width: min(11px, 40%); min-height: 5px; border-radius: 3px 3px 1px 1px; }
+.finora-chart-bar.income { background: #37886d; }
+.finora-chart-bar.expense { background: #f1b5a6; }
+.finora-chart-legend { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 5px; color: #89958d; font-size: 7px; }
+.finora-chart-legend span { display: inline-flex; align-items: center; gap: 4px; }
+.finora-chart-legend i { display: block; width: 6px; height: 6px; border-radius: 2px; }
+.finora-chart-legend .income-dot { background: #37886d; }
+.finora-chart-legend .expense-dot { background: #f1b5a6; }
+.finora-goal-icon { display: grid; place-items: center; width: 29px; height: 29px; margin-bottom: 10px; border-radius: 9px; background: #e7f3eb; color: #28785d; }
+.finora-goal-card > strong { display: block; margin-top: 5px; font-size: 12px; }
+.finora-goal-amount { display: flex; flex-wrap: wrap; gap: 4px; align-items: baseline; margin-top: 12px; }
+.finora-goal-amount b { font-size: 11px; }
+.finora-goal-amount span { color: #909a94; font-size: 8px; }
+.finora-goal-track { height: 6px; overflow: hidden; margin-top: 9px; border-radius: 100px; background: #edf0ed; }
+.finora-goal-track span { display: block; width: 60%; height: 100%; border-radius: inherit; background: #2a8063; }
+.finora-goal-card > small { display: block; margin-top: 8px; color: #8b968f; font-size: 7px; }
+.finora-floating-note { position: absolute; z-index: 4; right: -18px; bottom: -13px; display: flex; align-items: center; gap: 10px; padding: 13px 16px; border: 1px solid rgba(28,43,38,0.08); border-radius: 13px; background: rgba(255,255,255,0.95); box-shadow: 0 14px 35px rgba(28,43,38,0.14); }
+.finora-floating-note-icon { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 10px; background: #e6f2e9; color: #1d6f5c; }
+.finora-floating-note strong { display: block; color: #26372f; font-size: 10px; }
+.finora-floating-note small { display: block; margin-top: 4px; color: #87928c; font-size: 9px; }
+
+.finora-value-strip { border-bottom: 1px solid var(--finora-line); background: #fff; }
+.finora-value-grid { display: grid; grid-template-columns: repeat(3, 1fr); padding-block: 24px; }
+.finora-value-grid > div { display: flex; align-items: center; justify-content: center; gap: 13px; padding: 5px 20px; border-right: 1px solid #e9ede8; }
+.finora-value-grid > div:first-child { justify-content: flex-start; padding-left: 0; }
+.finora-value-grid > div:last-child { justify-content: flex-end; padding-right: 0; border-right: 0; }
+.finora-value-icon { width: 38px; height: 38px; display: grid; place-items: center; flex-shrink: 0; border-radius: 12px; background: var(--accent-soft, #e7f1ed); color: var(--accent, #1d6f5c); font-size: 20px; }
+.finora-value-grid strong { display: block; color: var(--ink); font-size: 12px; }
+.finora-value-grid small { display: block; margin-top: 5px; color: var(--muted); font-size: 10px; }
+
+.finora-section { padding-block: 100px; }
+.finora-features-section { background: #f8f9f5; scroll-margin-top: 85px; }
+.finora-section-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; margin-bottom: 43px; }
+.finora-eyebrow { margin: 0 0 14px; color: var(--accent, #1d6f5c); font-size: 10px; font-weight: 850; letter-spacing: 1.7px; }
+.finora-section-heading h2, .finora-ai-copy h2 { margin: 0; color: #1b2b25; font-size: clamp(34px, 4.1vw, 49px); line-height: 1.1; letter-spacing: -1.9px; font-weight: 760; }
+.finora-section-intro { max-width: 405px; margin: 0 0 3px; color: var(--muted, #5b6b64); font-size: 14px; line-height: 1.85; }
+.finora-feature-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 15px; }
+.finora-feature-card { display: flex; flex-direction: column; min-height: 275px; padding: 23px 21px 21px; border: 1px solid #e5eae4; border-radius: 16px; background: #fff; box-shadow: 0 5px 18px rgba(28,43,38,0.025); transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease; }
+.finora-feature-card:hover { transform: translateY(-4px); border-color: #bfd9cb; box-shadow: 0 15px 35px rgba(28,43,38,0.07); }
+.finora-feature-card-highlight { border-color: rgba(29,111,92,0.24); background: linear-gradient(155deg, #fff 0%, #f0f7f1 100%); }
+.finora-feature-card-top { display: flex; align-items: center; justify-content: space-between; }
+.finora-feature-icon { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 13px; background: #e9f3eb; color: #236f57; }
+.finora-feature-card:nth-child(2) .finora-feature-icon { background: #f8eee1; color: #966a2b; }
+.finora-feature-card:nth-child(3) .finora-feature-icon { background: #eaf0fb; color: #4069a4; }
+.finora-feature-card:nth-child(4) .finora-feature-icon { background: #f5eafa; color: #8056a1; }
+.finora-feature-card:nth-child(6) .finora-feature-icon { background: #f9ece5; color: #a46040; }
+.finora-feature-card:nth-child(7) .finora-feature-icon { background: #faf2d9; color: #987b2f; }
+.finora-feature-card:nth-child(8) .finora-feature-icon { background: #e8eff0; color: #496970; }
+.finora-feature-number { color: #a6b2aa; font-size: 10px; font-weight: 800; letter-spacing: 1px; }
+.finora-feature-eyebrow { margin: 23px 0 8px; color: #87978d; font-size: 8px; font-weight: 850; letter-spacing: 1.1px; line-height: 1.4; }
+.finora-feature-card h3 { margin: 0; color: #20332a; font-size: 17px; font-weight: 750; letter-spacing: -0.4px; }
+.finora-feature-description { margin: 10px 0 19px; color: #66766d; font-size: 12px; line-height: 1.75; }
+.finora-feature-link { display: inline-flex; align-items: center; gap: 9px; margin-top: auto; color: var(--accent, #1d6f5c); font-size: 11px; font-weight: 800; }
+.finora-feature-link span, .finora-text-link span { transition: transform 150ms ease; }
+.finora-feature-link:hover span, .finora-text-link:hover span { transform: translate(2px, -2px); }
+.finora-feature-footnote { margin: 19px 0 0; text-align: center; color: #8b968f; font-size: 10px; }
+
+.finora-ai-section { position: relative; overflow: hidden; padding-block: 100px; background: #eaf3eb; scroll-margin-top: 85px; }
+.finora-ai-grid { display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr); align-items: center; gap: 100px; }
+.finora-ai-visual { position: relative; display: grid; place-items: center; min-height: 430px; }
+.finora-ai-orbit { position: absolute; border: 1px solid rgba(29,111,92,0.13); border-radius: 50%; }
+.finora-ai-orbit-one { width: 390px; height: 390px; }
+.finora-ai-orbit-two { width: 310px; height: 310px; border-style: dashed; }
+.finora-ai-card { position: relative; z-index: 1; width: min(100%, 385px); padding: 19px; border: 1px solid rgba(28,43,38,0.1); border-radius: 17px; background: rgba(255,255,255,0.96); box-shadow: 0 24px 65px rgba(27,72,54,0.14); transform: rotate(-1.5deg); }
+.finora-ai-card-header { display: flex; align-items: center; gap: 10px; padding-bottom: 15px; border-bottom: 1px solid #edf0ec; }
+.finora-ai-avatar { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 12px; background: #e3f1e7; color: #1d6f5c; }
+.finora-ai-card-header > span:nth-child(2) { flex: 1; }
+.finora-ai-card-header strong { display: block; color: #26372f; font-size: 12px; }
+.finora-ai-card-header small { display: block; margin-top: 4px; color: #89968e; font-size: 9px; }
+.finora-ai-card-header > i { width: 7px; height: 7px; border-radius: 50%; background: #64a883; box-shadow: 0 0 0 4px #e6f3e9; }
+.finora-chat-bubble { max-width: 90%; padding: 12px 13px; border-radius: 12px; font-size: 11px; line-height: 1.7; }
+.finora-chat-bubble.user-bubble { margin: 17px 0 12px auto; background: #1d6f5c; color: #fff; border-bottom-right-radius: 4px; }
+.finora-chat-bubble.assistant-bubble { display: flex; align-items: flex-start; gap: 9px; max-width: 100%; background: #f2f6f1; color: #53665b; border-bottom-left-radius: 4px; }
+.finora-chat-spark { color: #23775d; font-size: 16px; }
+.finora-ai-suggestions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.finora-ai-suggestions span { padding: 7px 9px; border: 1px solid #e1e9e1; border-radius: 999px; color: #5b6d62; font-size: 8px; }
+.finora-ai-input { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 16px; padding: 8px 9px 8px 12px; border: 1px solid #e0e7e0; border-radius: 10px; color: #9aa39d; font-size: 9px; }
+.finora-ai-input b { width: 27px; height: 27px; display: grid; place-items: center; border-radius: 8px; background: #1d6f5c; color: #fff; font-size: 16px; }
+.finora-ai-demo-note { margin: 10px 0 0; text-align: center; color: #98a39b; font-size: 8px; }
+.finora-ai-copy h2 { font-size: clamp(35px, 4vw, 48px); }
+.finora-ai-copy > p:not(.finora-eyebrow) { margin: 20px 0 0; color: #62756a; font-size: 14px; line-height: 1.9; }
+.finora-ai-points { margin-top: 28px; border-top: 1px solid rgba(29,111,92,0.14); }
+.finora-ai-points > div { display: flex; gap: 15px; padding: 17px 0; border-bottom: 1px solid rgba(29,111,92,0.14); }
+.finora-ai-points > div > span { padding-top: 2px; color: #638d78; font-size: 10px; font-weight: 850; letter-spacing: 1px; }
+.finora-ai-points p { margin: 0; }
+.finora-ai-points strong { display: block; color: #244236; font-size: 13px; }
+.finora-ai-points small { display: block; margin-top: 6px; color: #687a6f; font-size: 11px; line-height: 1.6; }
+.finora-text-link { display: inline-flex; align-items: center; gap: 10px; margin-top: 26px; color: #155846; font-size: 13px; font-weight: 850; }
+
+.finora-how-section { background: #fff; scroll-margin-top: 85px; }
+.finora-section-heading-centered { align-items: flex-end; }
+.finora-steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; }
+.finora-step { position: relative; min-height: 220px; padding: 26px; border: 1px solid #e5eae4; border-radius: 16px; background: #fbfcf9; }
+.finora-step-number { color: #8fa79a; font-size: 10px; font-weight: 850; letter-spacing: 1.3px; }
+.finora-step-symbol { display: grid; place-items: center; width: 43px; height: 43px; margin-top: 22px; border-radius: 13px; background: #e8f2e9; color: #246e56; font-size: 23px; }
+.finora-step:nth-child(2) .finora-step-symbol { background: #f8efe0; color: #926e31; }
+.finora-step:nth-child(3) .finora-step-symbol { background: #eeeafa; color: #775baa; }
+.finora-step h3 { margin: 17px 0 8px; color: #22332b; font-size: 16px; letter-spacing: -0.35px; }
+.finora-step p { max-width: 300px; margin: 0; color: #718077; font-size: 12px; line-height: 1.8; }
+
+.finora-final-cta { position: relative; overflow: hidden; padding-block: 82px; background: radial-gradient(circle at 50% 0%, #276f59 0%, #174a3b 42%, #123a2f 100%); color: white; text-align: center; }
+.finora-final-cta::before, .finora-final-cta::after { content: ""; position: absolute; width: 360px; height: 360px; border: 1px solid rgba(255,255,255,0.08); border-radius: 50%; pointer-events: none; }
+.finora-final-cta::before { top: -230px; left: -90px; box-shadow: 0 0 0 34px rgba(255,255,255,0.025), 0 0 0 68px rgba(255,255,255,0.02); }
+.finora-final-cta::after { right: -140px; bottom: -270px; }
+.finora-final-cta-inner { position: relative; z-index: 1; display: flex; align-items: center; flex-direction: column; }
+.finora-cta-mark { width: 48px; height: 48px; display: grid; place-items: center; margin-bottom: 21px; border: 1px solid rgba(255,255,255,0.25); border-radius: 15px; background: rgba(255,255,255,0.09); font-family: Georgia, serif; font-size: 30px; font-weight: 800; }
+.finora-cta-mark span { color: #a5d9b9; }
+.finora-final-cta .finora-eyebrow { color: #b5dfc4; }
+.finora-final-cta h2 { margin: 0; font-size: clamp(37px, 4.8vw, 57px); font-weight: 740; letter-spacing: -2.1px; line-height: 1.08; }
+.finora-final-cta h2 em { color: #b6ddc5; }
+.finora-final-cta-inner > p:not(.finora-eyebrow) { max-width: 520px; margin: 19px 0 26px; color: rgba(255,255,255,0.72); font-size: 14px; line-height: 1.8; }
+.finora-button-light { background: #fff; color: #174a3b; box-shadow: 0 9px 22px rgba(0,0,0,0.13); }
+.finora-button-light:hover { background: #eaf5ed; }
+
+.finora-footer { background: #f8f9f5; }
+.finora-footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 25px; min-height: 105px; padding-block: 22px; }
+.finora-footer .finora-brand-mark { width: 35px; height: 35px; border-radius: 11px; font-size: 22px; }
+.finora-footer .finora-brand-word { font-size: 19px; }
+.finora-footer .finora-brand-word small { font-size: 7px; }
+.finora-footer-inner > p { margin: 0; color: #849087; font-size: 11px; }
+.finora-footer-links { display: flex; align-items: center; gap: 19px; }
+.finora-footer-links a { color: #68776e; font-size: 11px; font-weight: 650; }
+.finora-footer-links a:hover { color: var(--accent); }
+
+@media (max-width: 1080px) {
+  .finora-main-nav { gap: 18px; }
+  .finora-hero-grid { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 17px; }
+  .finora-hero h1 { font-size: clamp(45px, 5.7vw, 64px); letter-spacing: -3.2px; }
+  .finora-preview-content { padding: 16px; }
+  .finora-feature-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .finora-ai-grid { gap: 55px; }
+}
+
+@media (max-width: 820px) {
+  .finora-nav-inner { width: calc(100% - 36px); min-height: 72px; gap: 14px; }
+  .finora-main-nav { display: none; }
+  .finora-nav-actions { margin-left: auto; }
+  .finora-hero-grid { grid-template-columns: 1fr; padding-block: 58px 70px; }
+  .finora-hero-copy { max-width: 660px; }
+  .finora-hero h1 { font-size: clamp(52px, 8vw, 72px); }
+  .finora-hero-visual { width: min(100%, 650px); margin: 10px auto 0; padding: 0 8px 17px; }
+  .finora-preview-wrap { margin-inline: auto; }
+  .finora-floating-note { right: -3px; }
+  .finora-value-grid { gap: 13px; }
+  .finora-value-grid > div { justify-content: flex-start; padding: 5px 10px; }
+  .finora-value-grid > div:first-child { padding-left: 0; }
+  .finora-value-grid > div:last-child { padding-right: 0; }
+  .finora-value-icon { width: 34px; height: 34px; }
+  .finora-value-grid strong { font-size: 11px; }
+  .finora-value-grid small { font-size: 9px; }
+  .finora-section, .finora-ai-section { padding-block: 76px; }
+  .finora-section-heading { align-items: flex-start; flex-direction: column; gap: 17px; }
+  .finora-section-intro { max-width: 600px; }
+  .finora-feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .finora-ai-grid { grid-template-columns: 1fr; gap: 35px; }
+  .finora-ai-visual { min-height: 400px; }
+  .finora-ai-copy { max-width: 650px; }
+  .finora-section-heading-centered { align-items: flex-start; }
+  .finora-steps-grid { gap: 12px; }
+  .finora-step { padding: 20px; }
+  .finora-footer-inner { flex-wrap: wrap; }
+}
+
+@media (max-width: 560px) {
+  .finora-container { width: calc(100% - 36px); }
+  .finora-nav-inner { width: calc(100% - 28px); min-height: 67px; }
+  .finora-brand { gap: 8px; }
+  .finora-brand-mark { width: 37px; height: 37px; border-radius: 12px; font-size: 23px; }
+  .finora-brand-word { font-size: 20px; }
+  .finora-brand-word small { display: none; }
+  .finora-nav-actions { gap: 12px; }
+  .finora-login-link { font-size: 12px; }
+  .finora-nav-cta { min-height: 39px; padding-inline: 12px; font-size: 11px; }
+  .finora-hero-grid { padding-block: 46px 58px; }
+  .finora-pill { padding: 8px 10px; font-size: 10px; }
+  .finora-hero h1 { margin-top: 22px; font-size: clamp(43px, 12vw, 59px); letter-spacing: -2.7px; }
+  .finora-hero-description { font-size: 14px; line-height: 1.8; }
+  .finora-hero-actions { align-items: stretch; flex-direction: column; }
+  .finora-hero-actions .finora-button { width: 100%; }
+  .finora-hero-footnote { align-items: flex-start; font-size: 10px; }
+  .finora-hero-visual { padding-inline: 0; }
+  .finora-preview-window { border-radius: 14px; transform: none; }
+  .finora-preview-topline { min-height: 37px; padding-inline: 10px; }
+  .finora-preview-content { padding: 11px; }
+  .finora-preview-heading { align-items: flex-start; }
+  .finora-preview-heading h2 { font-size: 14px; }
+  .finora-preview-period { padding: 6px; font-size: 7px; }
+  .finora-preview-balance { padding: 13px; }
+  .finora-preview-balance strong { font-size: 24px; }
+  .finora-balance-mark { width: 34px; height: 34px; font-size: 21px; }
+  .finora-mini-metric { padding: 11px; }
+  .finora-mini-metric strong { font-size: 15px; }
+  .finora-preview-lower { grid-template-columns: 1fr; }
+  .finora-chart-card { padding: 12px; }
+  .finora-chart { height: 91px; }
+  .finora-chart-bars { height: 74px; }
+  .finora-goal-card { display: grid; grid-template-columns: 34px 1fr; align-items: center; column-gap: 9px; }
+  .finora-goal-icon { grid-row: span 2; margin: 0; }
+  .finora-goal-card > .finora-preview-muted, .finora-goal-card > strong, .finora-goal-amount, .finora-goal-track, .finora-goal-card > small { grid-column: 2; }
+  .finora-goal-card > .finora-preview-muted { align-self: end; }
+  .finora-goal-card > strong { margin-top: 4px; }
+  .finora-goal-amount { margin-top: 9px; }
+  .finora-floating-note { right: 3px; bottom: -16px; padding: 10px 12px; }
+  .finora-floating-note strong { font-size: 9px; }
+  .finora-value-grid { grid-template-columns: 1fr; padding-block: 12px; }
+  .finora-value-grid > div, .finora-value-grid > div:first-child, .finora-value-grid > div:last-child { justify-content: flex-start; padding: 10px 0; border-right: 0; }
+  .finora-value-grid > div + div { border-top: 1px solid #e9ede8; }
+  .finora-section, .finora-ai-section { padding-block: 60px; }
+  .finora-section-heading h2, .finora-ai-copy h2 { font-size: 36px; letter-spacing: -1.5px; }
+  .finora-feature-grid { grid-template-columns: 1fr; gap: 12px; }
+  .finora-feature-card { min-height: 0; padding: 21px; }
+  .finora-feature-eyebrow { margin-top: 18px; }
+  .finora-feature-description { margin-bottom: 17px; }
+  .finora-ai-visual { min-height: 355px; }
+  .finora-ai-orbit-one { width: 310px; height: 310px; }
+  .finora-ai-orbit-two { width: 250px; height: 250px; }
+  .finora-ai-card { padding: 14px; }
+  .finora-steps-grid { grid-template-columns: 1fr; }
+  .finora-step { min-height: 0; }
+  .finora-step-symbol { margin-top: 15px; }
+  .finora-final-cta { padding-block: 64px; }
+  .finora-final-cta h2 { font-size: 39px; letter-spacing: -1.4px; }
+  .finora-footer-inner { align-items: flex-start; flex-direction: column; gap: 17px; padding-block: 24px; }
+  .finora-footer-links { flex-wrap: wrap; }
+}
+
+/* Small accessibility improvement across the app. */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid rgba(29, 111, 92, 0.38);
+  outline-offset: 3px;
+}

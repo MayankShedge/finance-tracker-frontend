@@ -20,15 +20,13 @@ import Devices from "./pages/Devices";
 import Tasks from "./pages/Tasks";
 import ReminderSettings from "./pages/ReminderSettings";
 import Chat from "./pages/Chat";
+import LandingPage from "./pages/LandingPage";
 
-function ProtectedRoute({
-  children,
-}) {
-  const {
-    user,
-    isLoading,
-  } = useAuth();
+// Protect pages that require authentication
+function ProtectedRoute({ children }) {
+  const { user, isLoading } = useAuth();
 
+  // Wait until the authentication state is loaded
   if (isLoading) {
     return (
       <div className="loading-state app-loading">
@@ -37,19 +35,20 @@ function ProtectedRoute({
     );
   }
 
-  return user ? (
-    children
-  ) : (
-    <Navigate
-      to="/login"
-      replace
-    />
-  );
+  // Allow authenticated users; redirect others to login
+  return user ? children : <Navigate to="/login" replace />;
 }
 
 function AppRoutes() {
   return (
     <Routes>
+      {/* Public landing page */}
+      <Route
+        path="/"
+        element={<LandingPage />}
+      />
+
+      {/* Authentication pages */}
       <Route
         path="/login"
         element={<Login />}
@@ -60,6 +59,7 @@ function AppRoutes() {
         element={<Signup />}
       />
 
+      {/* Protected dashboard */}
       <Route
         path="/dashboard"
         element={
@@ -69,6 +69,7 @@ function AppRoutes() {
         }
       />
 
+      {/* Protected goals page */}
       <Route
         path="/goals"
         element={
@@ -78,6 +79,7 @@ function AppRoutes() {
         }
       />
 
+      {/* Protected transactions page */}
       <Route
         path="/transactions"
         element={
@@ -87,6 +89,7 @@ function AppRoutes() {
         }
       />
 
+      {/* Protected CSV import page */}
       <Route
         path="/import"
         element={
@@ -96,6 +99,7 @@ function AppRoutes() {
         }
       />
 
+      {/* Protected connected devices page */}
       <Route
         path="/devices"
         element={
@@ -105,6 +109,7 @@ function AppRoutes() {
         }
       />
 
+      {/* Protected tasks page */}
       <Route
         path="/tasks"
         element={
@@ -114,6 +119,7 @@ function AppRoutes() {
         }
       />
 
+      {/* Protected reminders page */}
       <Route
         path="/reminders"
         element={
@@ -123,6 +129,7 @@ function AppRoutes() {
         }
       />
 
+      {/* Protected AI assistant */}
       <Route
         path="/chat"
         element={
@@ -132,14 +139,10 @@ function AppRoutes() {
         }
       />
 
+      {/* Redirect unknown URLs to the landing page */}
       <Route
         path="*"
-        element={
-          <Navigate
-            to="/dashboard"
-            replace
-          />
-        }
+        element={<Navigate to="/" replace />}
       />
     </Routes>
   );

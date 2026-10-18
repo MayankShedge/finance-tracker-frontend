@@ -356,10 +356,10 @@ export default function Dashboard() {
           className="app-brand"
           to="/dashboard"
         >
-          <span className="app-brand-mark">₹</span>
+          <span className="app-brand-mark">F</span>
           <span className="app-brand-copy">
-            <strong>Finance Tracker</strong>
-            <small>Personal finance, made simple</small>
+            <strong>Finora</strong>
+            <small>Personal finance, made smarter</small>
           </span>
         </Link>
 
